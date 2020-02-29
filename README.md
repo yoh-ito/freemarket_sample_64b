@@ -14,7 +14,8 @@
 ### Association
 - belongs_to :brand
 - has_many :images
-- has_one :category
+- has_many :items_categories
+- has_many :categories, through :items_categories
 - belongs_to :solder, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 
@@ -27,7 +28,7 @@
 |first_name_kana|string|null: false|
 |nickname|string|null: false|
 |email|string|null: false, unique:true|
-|password|string|null: false|
+|password|string|null: false,unique:true|
 |birthday|date|null: false|
 |delivery_charge|text|null: false|
 |delivery_area|text|null: false|
@@ -41,7 +42,7 @@
 - has_many :buy_items, class_name: "User", foreign_key: "solder_id"
 - has_many :sold_items, ->{where(buyer_id is not NULL)}, class_name: "Item",foreign_key: "solder_id"
 
-## credit_cardsテーブル
+### credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null:faise, foreign_key:true|
@@ -68,9 +69,10 @@
 |item|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item
+- has_many :items_categories
+- has_many :items, through :items_categories
 
-## item_categoriesテーブル
+## items_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item|references|null: false, foreign_key: true|
