@@ -41,7 +41,7 @@
 - has_many :buy_items, class_name: "User", foreign_key: "solder_id"
 - has_many :sold_items, ->{where(buyer_id is not NULL)}, class_name: "Item",foreign_key: "solder_id"
 
-### credit_cardsテーブル
+## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null:faise, foreign_key:true|
