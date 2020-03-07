@@ -4,18 +4,19 @@
 |------|----|-------|
 |name|string|null: false|
 |text|text|null: false|
-|item_status|text|null: false|
+|item_status|string|null: false|
 |price|integer|null: false|
+|delivery_charge|string|null: false|
+|delivery_area|string|null: false|
+|delivery_days|string|null: false|
 |category|references|null: false, foreign_key:true|
-|brand|references|null: false, foreign_key:true|
-|solder_id|references|class_name:"User"|
-|buyer_id|references|class_name:"User"|
-
+|brand|references|foreign_key:true|
+|solder_id|integer||
+|buyer_id|integer||
 ### Association
-- belongs_to :brand
 - has_many :images
-- has_many :items_categories
-- has_many :categories, through :items_categories
+- belongs_to :category
+- belongs_to :brand
 - belongs_to :solder, class_name: "User"
 - belongs_to :buyer, class_name: "User"
 
@@ -30,17 +31,29 @@
 |email|string|null: false, unique:true|
 |password|string|null: false,unique:true|
 |birthday|date|null: false|
-|delivery_charge|text|null: false|
-|delivery_area|text|null: false|
-|delivery_days|text|null: false|
-
 ### Association
 - has_many :items
 - has_one :credit_card
-- belongs_to :user
-- has_many :seling_items, ->{where(buyer_id is NULL)}, class_name: "User", foreign_key: "solder_id"
-- has_many :buy_items, class_name: "User", foreign_key: "solder_id"
+- has_many :buy_items, class_name: "Item", foreign_key: "buyer_id"
+- has_many :seling_items, ->{where(buyer_id is NULL)}, class_name: "Item", foreign_key: "solder_id"
 - has_many :sold_items, ->{where(buyer_id is not NULL)}, class_name: "Item",foreign_key: "solder_id"
+
+### adressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|postcode|integer|null:faise|
+|prefecture|string|null:false|
+|city|string|null:false|
+|block|string|null:false|
+|building|string|null:false|
+|phone_number|integer|
+|user|references|null:faise, foreign_key:true|
+### Association
+- belongs_to :user
 
 ### credit_cardsテーブル
 |Column|Type|Options|
@@ -48,7 +61,6 @@
 |user|references|null:faise, foreign_key:true|
 |customer_id|string|null:false|
 |card_id|string|null:false|
-
 ### Association
 - belongs_to :user
 
@@ -63,31 +75,15 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|genre|string|null: false|
-|subgenre|string|null: false|
-|detail|string|null: false|
-|item|references|null: false, foreign_key: true|
-
+|name|string|null: false|
+|ancestry|string||
 ### Association
-- has_many :items_categories
-- has_many :items, through :items_categories
-
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item|references|null: false, foreign_key: true|
-|category|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
-- belongs_to :category
-
+- has_many :items
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand|string|null: false|
-|item_id|references|null: false, foreign_key: true|
-
+|name|string|null: false|
 ### Association
-- belongs_to :item
+- has_many :items
