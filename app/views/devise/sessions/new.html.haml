@@ -1,0 +1,24 @@
+.header
+  = render "devise/shared/header"
+.main
+  .make_account_container
+    %p アカウントをお持ちでない方はこちら
+    .make_account_btn 新規会員登録
+  .sign_in_container
+    .sns_btn
+      .sns_logo
+        = image_tag '#', height: '', width: '', class: ''
+      %p Facebookでログイン
+      -# リンク先未実装
+    .sns_btn
+      .sns_logo
+        = image_tag '#', height: '', width: '', class: ''
+      %p Googleでログイン
+      -# リンク先未実装
+  %input(type="e-mail" name="e-mail" value="" placeholder="メールアドレス")/
+  %input(type="password" name="password" value="" placeholder="パスワード")/
+  -# 私はロボットではありませんは未実装
+  .log_in_btn ログイン
+  %a(href="#")パスワードをお忘れの方
+.footer
+  = render "devise/shared/footer"
