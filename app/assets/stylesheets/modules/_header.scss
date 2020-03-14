@@ -1,6 +1,5 @@
 .header {
   @include size(100px, 100%, 0);
-  position: fixed;
   &__form {
     @include size(100%, 100%, 0 50px);
     max-width: 1120px;
