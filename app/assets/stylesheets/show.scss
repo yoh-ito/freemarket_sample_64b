@@ -15,6 +15,13 @@
       .item-information{
         width: 700px;
         margin: 0 auto;
+        background-color: #fff;
+        padding: 24px 40px 40px; 
+        &__name{
+          text-align: center;
+          font-weight: bold;
+          font-size: 24px;
+        }   
 
       }
       .comment-box{
@@ -22,3 +29,5 @@
       }
 
     }
+  }
+}
