@@ -19,8 +19,8 @@
         .item-information__price
           %span ¥10000
           .item-information__price__detail
-            %span （税込））
-            %soan 送料込み
+            %span （税込）
+            %span 送料込み
         .item-information__text
           親譲りの無鉄砲で小供の時から損ばかりしている。
           小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
@@ -58,8 +58,11 @@
                 %th 発送日の目安
                 %td 1-2日で発送
         .item-information__option-area
-          .item-information__option-area__like-box
-            .item-information__option-area__like-box__btn
-          .item-information__option-area__report-btn
-            .item-information__option-area__report-btn__box
+          .item-information__option-area__like
+            .item-information__option-area__like__btn
+              %i.fas.fa-star
+              %span お気に入り0
+          .item-information__option-area__report
+            .item-information__option-area__report__btn
+              =link_to "不適切な商品の通報","#"
       .comment-box

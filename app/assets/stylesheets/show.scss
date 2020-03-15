@@ -90,7 +90,8 @@
                   padding: 8px;
                   border: 1px solid #dedede;
                   font-size: 14px;
-                  text-align: center;                }
+                  text-align: center; 
+                }
                 td{
                   width: 61%;
                   padding: 15px 15px;
@@ -99,11 +100,113 @@
                   a{
                     display: block;
                     text-decoration: none;
-                    color: #3CCACE;                  }                }
+                    color: #3CCACE;
+                  }
+                }
               }
             }
           }
         }
+        &__option-area{
+          display: flex;
+          justify-content: space-between;        
+          &__like{
+            margin-top: 10px;
+            &__btn{
+              margin-right: auto;
+              padding: 6px 10px;
+              border-radius: 40px;
+              color: #3CCACE;
+              border: 1px solid #ffb340;
+              &:hover{opacity: 0.5;}
+            }
+          }
+          &__report{
+            margin-top: 10px;
+            &__btn{
+              font-size: 14px;
+              border: 1px solid #333;
+              border-radius: 4px;
+              &:hover{opacity: 0.5;}
+              a{
+                padding: 6px 10px;
+                display: inline-block;
+                color: #333;
+                text-decoration: none; 
+                &:before {
+                  font-family: "Font Awesome 5 Brands";
+                  font-weight: 400; 
+                  content: '\f425\00a0';
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      }
+      &__option-area{
+        display: flex;
+        justify-content: space-between;        
+        &__like{
+          margin: 10px 0 0;
+          &__btn{
+            margin-right: auto;
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: #3CCACE;
+            border: 1px solid #ffb340;
+          }
+
+
+
+
+            span{}
+
+
+        }
+        
+        &__report{
+
+          &__btn{
+            a{ }
+          }
+        }
+
       }
       .comment-box{
 
