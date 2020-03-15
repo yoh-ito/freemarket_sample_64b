@@ -1,31 +1,34 @@
-.header
-  = render "devise/shared/header"
-.sessions_main
-  .container.make_account
-    %p アカウントをお持ちでない方はこちら
-    .btn.make_account 新規会員登録
-  .container.sign_in
-    .sns_btn
-      %a.facebook(href="#")
-        Facebookでログイン
-        .sns_logo
-      %a.google(href="#")
-        Googleでログイン
-        .sns_logo
-    .account_info
-      %input(type="e-mail" name="e-mail" class="input_box" value="" placeholder="メールアドレス")/
-      -# サーバーサイド作業にてformメソッドを実装予定
-    .account_info
-      %input(type="password" name="password" class="input_box" value="" placeholder="パスワード")/
-    .not_robot
-      .alert
-        確認は時間切れとなりました。チェックボックスをもう一度オンにしてください。
-      .cycle_logo
-        -# %i.fas.fa-recycle
-        -# 他ブランチでfontawesome導入のためコンフリクト回避のため未実装
-      %input(type="checkbox" name="" class="robot_checkbox" value="1")/
-      .iamnotrobot 私はロボットではありません
-      .praivacy_policy プライバシー・利用規約
-    .btn.login ログイン
-    %a(href="#")パスワードをお忘れの方
-= render "devise/shared/footer"
+.device.body
+  .header
+    = render "devise/shared/header"
+  .sessions_main
+    .container.make_account
+      %p アカウントをお持ちでない方はこちら
+      .btn.make_account 新規会員登録
+    .container.sign_in
+      .sns_btn
+        %a.facebook(href="#")
+          Facebookでログイン
+          .sns_logo
+            %i.fab.fa-facebook-square
+        %a.google(href="#")
+          Googleでログイン
+          .sns_logo
+            %i.fab.fa-google
+      .account_info
+        %input(type="e-mail" name="e-mail" class="input_box" value="" placeholder="メールアドレス")/
+        -# サーバーサイド作業にてformメソッドを実装予定
+      .account_info
+        %input(type="password" name="password" class="input_box" value="" placeholder="パスワード")/
+      .not_robot
+        .alert
+          確認は時間切れとなりました。チェックボックスをもう一度オンにしてください。
+        .cycle_logo
+          %i.fas.fa-recycle
+          -# ちょうどよいアイコンが見つからなかったので仮設定
+        %input(type="checkbox" name="" class="robot_checkbox" value="1")/
+        .iamnotrobot 私はロボットではありません
+        .praivacy_policy プライバシー・利用規約
+      .btn.login ログイン
+      %a(href="#")パスワードをお忘れの方
+  = render "devise/shared/footer"

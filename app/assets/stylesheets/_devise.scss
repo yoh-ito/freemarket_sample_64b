@@ -1,280 +1,285 @@
-body {
+.device.body {
   background-color: lightgray;
-  width: 700px;
+  // width: 700px;
   margin: 0 auto;
   padding: 40px 0;
-}
 
-h1 {
-  font-size: 16px;
-  font-weight: bold;
-  color: black;
-}
-
-h2, h3, p, a {
-  font-size: 14px;
-}
-
-h3 {
-  font-weight: bold;
-  color: black;
-}
-
-p {
-  color: black;
-}
-
-a {
-  color: skyblue;
-  text-decoration: none;
-}
-
-.logo {
-  width: 185px;
-  height: 50px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.footer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  
-  .links{
-    margin: 0 auto;
-    margin-top: 20px;    
-
-    ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-  
-      li {
-        margin-right: 40px;
-      }
-    }
+  h1 {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
   }
 
-  a.footer {
+  h2, h3, p, a {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-weight: bold;
     color: black;
-    font-size: 10px;
-  }  
-}
+  }
 
-.container {
-  padding: 30px 65px;
-  background-color: white;
-}
+  p {
+    color: black;
+  }
 
-.btn {
-  line-height: 48px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  justify-content: center;
-}
+  a {
+    color: skyblue;
+    text-decoration: none;
+  }
 
-.input_box {
-  width: 93%;
-  line-height: 48px;
-  padding-left: 20px;
-  font-size: 14px;
-}
+  .logo {
+    width: 185px;
+    height: 50px;
+  }
 
-.input_box-half {
-  width: 40%;
-  line-height: 48px;
-  padding-left: 20px;
-  font-size: 14px;
-}
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-.input_box-quarter {
-  width:15%;
-  line-height: 48px;
-  padding-left: 20px;
-  font-size: 14px;
-}
-
-.sessions_main {
-  padding: 0 120px;
-
-  .container.make_account {
-    margin-bottom: 2px;
-    padding: 30px 65px;
-    background-color: white;
+  .footer {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    text-align: center;
-  
-    .btn.make_account {
-      font-size: 14px;
-      color: white;
-      background-color: skyblue;
-      text-align: center;
-    }
-  }
-  
-  .container.sign_in {
-    margin: 0 auto;
-    padding: 30px 65px;
-    background-color: white;
-  
-    .sns_btn{
-      margin-bottom: 56px;
-      
-      
-      a.facebook {
-        display: block;
-        line-height: 48px;
-        text-align: center;
-        font-size: 11px;
-        margin-bottom: 16px;
-        background-color: darkblue;
-        color: white;
-        position: relative;
-        .sns_logo {
-          position: absolute;
-          background-color: white;
-          width: 30px;
-          height: 30px;
-          top: 9px;
-          left: 20px;
-        }  
-      }
-      
-      a.google {
-        display: block;
-        line-height: 48px;
-        text-align: center;
-        font-size: 11px;
-        margin-bottom: 16px;
-        background-color: white;
-        color: black;
-        border: solid;
-        border-width: 1px;
-        position: relative;
-        .sns_logo {
-          position: absolute;
-          background-color: green;
-          width: 30px;
-          height: 30px;
-          top: 9px;
-          left: 20px;
-        }  
-      }
-    }
+    
+    .links{
+      margin: 0 auto;
+      margin-top: 20px;    
 
-    .account_info {
-      margin-bottom: 24px;
-    }
-  
-    .not_robot {
-      background-color: lightgray;
-      border: solid;
-      border-width: 1px;
-      border-radius: 5px;
-      border-color: gray;
-      margin-bottom: 24px;
-      padding: 20px;
-      position: relative;
-      .alert {
-        color: red;
-        font-size: 12px;
-        width: 90%;
-      }
-      .robot_checkbox {
-        position: relative;
-        top: 25px;
-        left: 15px;
-        transform: scale(3);
-        vertical-align: middle;
-      }
-      .iamnotrobot{
-        position: relative;
-        left: 60px;
-        display: block;
-        width: 150px;
-        font-size: 14px;
-      }
-      .cycle_logo{
-        background-color: white;
-        width: 60px;
-        height: 60px;
-        align-items: right;
-        float: right;
-      }
-      .praivacy_policy{
-        color: gray;
-        font-size: 8px;
-        text-align: right;
-      }
-    }
-
-    .btn.login {
-      background-color: red;
-      color: white;
-      text-align: center;
-      font-size: 12px;
-      margin-bottom: 24px;
-    }
-  }
-}
-
-.registrations_main {
-  padding: 0 120px;
-  margin-bottom: 2px;
-  background-color: white;
-
-  p.gray {
-    color: gray;
-  }
-  
-  p.red {
-    color:  red;
-  }
-
-  span {
-    background-color: red;
-    font-size: 12px;
-    color: white;
-    display: inline-block;
-    padding: 1px;
-    border-radius: 5px;
-  }
-
-  .container.head {
-    background-color: white;
-    text-align: center;
-  }
-  
-  .container.inner {
-    background-color: white;
-    padding: 30px 65px;
-
-    .group {
-      margin-bottom: 48px;
-
-      .form {
+      ul {
         display: flex;
-        justify-content: space-around;
-        line-height: 48px;
+        justify-content: center;
+        list-style: none;
+    
+        li {
+          margin-right: 40px;
+        }
+      }
+    }
+
+    a.footer {
+      color: black;
+      font-size: 10px;
+    }  
+  }
+
+  .container {
+    padding: 30px 65px;
+    background-color: white;
+  }
+
+  .btn {
+    line-height: 48px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .input_box {
+    width: 100%;
+    line-height: 48px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .input_box-half {
+    width: 45%;
+    line-height: 48px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .input_box-quarter {
+    width:22%;
+    line-height: 48px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+
+  .sessions_main {
+    width: 700px;
+    padding: 0 120px;
+    margin: 0 auto;
+
+    .container.make_account {
+      margin-bottom: 2px;
+      padding: 30px 65px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    
+      .btn.make_account {
+        font-size: 14px;
+        color: white;
+        background-color: skyblue;
+        text-align: center;
+      }
+    }
+    
+    .container.sign_in {
+      margin: 0 auto;
+      padding: 30px 65px;
+      background-color: white;
+    
+      .sns_btn{
+        margin-bottom: 56px;
+        
+        
+        a.facebook {
+          display: block;
+          line-height: 48px;
+          text-align: center;
+          font-size: 11px;
+          margin-bottom: 16px;
+          background-color: darkblue;
+          color: white;
+          position: relative;
+          .sns_logo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 0px;
+            left: 20px;
+            font-size: 30px;
+          }  
+        }
+        
+        a.google {
+          display: block;
+          line-height: 48px;
+          text-align: center;
+          font-size: 11px;
+          margin-bottom: 16px;
+          background-color: white;
+          color: black;
+          border: solid;
+          border-width: 1px;
+          position: relative;
+          .sns_logo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 0px;
+            left: 20px;
+            font-size: 20px;
+          }  
         }
       }
 
-    .btn.login {
-      background-color: red;
-      color: white;
-      text-align: center;
-      font-size: 12px;
-      margin-bottom: 24px;
+      .account_info {
+        margin-bottom: 24px;
+      }
+    
+      .not_robot {
+        background-color: lightgray;
+        border: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: gray;
+        margin-bottom: 24px;
+        padding: 20px;
+        position: relative;
+        .alert {
+          color: red;
+          font-size: 12px;
+          width: 90%;
+        }
+        .robot_checkbox {
+          position: relative;
+          top: 25px;
+          left: 15px;
+          transform: scale(3);
+          vertical-align: middle;
+        }
+        .iamnotrobot{
+          position: relative;
+          left: 60px;
+          display: block;
+          width: 150px;
+          font-size: 14px;
+        }
+        .cycle_logo{
+          width: 60px;
+          height: 60px;
+          align-items: right;
+          float: right;
+          font-size: 50px;
+        }
+        .praivacy_policy{
+          color: gray;
+          font-size: 8px;
+          text-align: right;
+        }
+      }
+
+      .btn.login {
+        background-color: red;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 24px;
+      }
     }
-    .about_registrations {
-      text-align: right;
+  }
+
+  .registrations_main {
+    width: 700px;
+    padding: 0 120px;
+    margin-bottom: 2px;
+    background-color: white;
+    margin: 0 auto;
+
+    p.gray {
+      color: gray;
+    }
+    
+    p.red {
+      color:  red;
+    }
+
+    span {
+      background-color: red;
+      font-size: 12px;
+      color: white;
+      display: inline-block;
+      padding: 1px;
+      border-radius: 5px;
+    }
+
+    .container.head {
+      background-color: white;
+      text-align: center;
+      margin-bottom: 2px;
+    }
+    
+    .container.inner {
+      background-color: white;
+      padding: 30px 65px;
+
+      .group {
+        margin-bottom: 48px;
+
+        .form {
+          display: flex;
+          justify-content: space-around;
+          line-height: 48px;
+          }
+        }
+
+      .btn.login {
+        background-color: red;
+        color: white;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 24px;
+      }
+      .about_registrations {
+        text-align: right;
+      }
     }
   }
 }
