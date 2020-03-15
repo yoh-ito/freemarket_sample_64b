@@ -12,11 +12,16 @@
   .content-all{
     padding: 40px;
     .main-content{
+      width: 700px;
+      margin: 0 auto;
+
+
       .item-information{
-        width: 700px;
-        margin: 0 auto;
-        background-color: #fff;
+        background-color: white;
+
         padding: 24px 40px 40px; 
+
+
         &__name{
           text-align: center;
           font-weight: bold;
@@ -142,76 +147,40 @@
             }
           }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      }
-      &__option-area{
-        display: flex;
-        justify-content: space-between;        
-        &__like{
-          margin: 10px 0 0;
-          &__btn{
-            margin-right: auto;
-            padding: 6px 10px;
-            border-radius: 40px;
-            color: #3CCACE;
-            border: 1px solid #ffb340;
-          }
-
-
-
-
-            span{}
-
-
-        }
-        
-        &__report{
-
-          &__btn{
-            a{ }
-          }
-        }
-
       }
       .comment-box{
+        width: 100%;
+        padding: 24px;
+        background-color: #fff;
+        margin: 10px 0;
+        text-align: center;
+        form {
+          input{
+            width: 100%;
+            min-height: 104px;
+            padding: 10px;
+          }
+          p{
+            padding: 8px;
+            font-size: 14px;
+            background-color: #f8f8f8;
+            margin: 10px 0;
+            text-align: left;
+          }
+          submit{
+            margin: 0 auto;
+            display: block;
+            line-height: 48px;
+            background: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: #fff;
+            width: 60%;
+            font-size: 18px;
+            border-radius: 100px;
+          }
 
+        }
       }
-
     }
-  }
+  }    
 }
