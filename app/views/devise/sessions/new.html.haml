@@ -1,24 +1,31 @@
 .header
   = render "devise/shared/header"
-.main
-  .make_account_container
+.sessions_main
+  .container.make_account
     %p アカウントをお持ちでない方はこちら
-    .make_account_btn 新規会員登録
-  .sign_in_container
+    .btn.make_account 新規会員登録
+  .container.sign_in
     .sns_btn
-      .sns_logo
-        = image_tag '#', height: '', width: '', class: ''
-      %p Facebookでログイン
-      -# リンク先未実装
-    .sns_btn
-      .sns_logo
-        = image_tag '#', height: '', width: '', class: ''
-      %p Googleでログイン
-      -# リンク先未実装
-  %input(type="e-mail" name="e-mail" value="" placeholder="メールアドレス")/
-  %input(type="password" name="password" value="" placeholder="パスワード")/
-  -# 私はロボットではありませんは未実装
-  .log_in_btn ログイン
-  %a(href="#")パスワードをお忘れの方
-.footer
-  = render "devise/shared/footer"
+      %a.facebook(href="#")
+        Facebookでログイン
+        .sns_logo
+      %a.google(href="#")
+        Googleでログイン
+        .sns_logo
+    .account_info
+      %input(type="e-mail" name="e-mail" class="input_box" value="" placeholder="メールアドレス")/
+      -# サーバーサイド作業にてformメソッドを実装予定
+    .account_info
+      %input(type="password" name="password" class="input_box" value="" placeholder="パスワード")/
+    .not_robot
+      .alert
+        確認は時間切れとなりました。チェックボックスをもう一度オンにしてください。
+      .cycle_logo
+        -# %i.fas.fa-recycle
+        -# 他ブランチでfontawesome導入のためコンフリクト回避のため未実装
+      %input(type="checkbox" name="" class="robot_checkbox" value="1")/
+      .iamnotrobot 私はロボットではありません
+      .praivacy_policy プライバシー・利用規約
+    .btn.login ログイン
+    %a(href="#")パスワードをお忘れの方
+= render "devise/shared/footer"
