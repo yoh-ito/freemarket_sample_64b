@@ -52,7 +52,24 @@
             }
           }
 
-        }  
+        } 
+        &__price{
+          margin: 24px 0 24px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          span {
+            font-size: 46px;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+          }
+          &__detail{
+            span{
+              font: unset;
+              margin: unset;
+            }
+          }         
+        } 
 
       }
       .comment-box{
