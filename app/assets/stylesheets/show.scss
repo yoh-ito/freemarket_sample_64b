@@ -21,7 +21,38 @@
           text-align: center;
           font-weight: bold;
           font-size: 24px;
-        }   
+        } 
+        &__images{
+          margin-top: 16px;
+          ul{
+            display: flex;
+            position: relative;
+            li{
+              display: flex;
+              flex-direction: column;
+              width: 560px;
+              margin: 0 auto;
+              img {
+                object-fit: cover;
+                height: 346px;
+              }
+              ul{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                li{
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                  img{
+                    object-fit: cover;
+                    height: 87px;
+                  }
+                }
+              }
+            }
+          }
+
+        }  
 
       }
       .comment-box{
