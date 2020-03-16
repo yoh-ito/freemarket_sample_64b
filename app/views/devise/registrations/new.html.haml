@@ -45,17 +45,18 @@
         .form
           %input(type="text" name="birthday_yy" value="" class="input_box-quarter" placeholder="--")/
           年
-          %input(type="text" name="birthday_yy" value="" class="input_box-quarter" placeholder="--")/
+          %input(type="text" name="birthday_mm" value="" class="input_box-quarter" placeholder="--")/
           月
-          %input(type="text" name="birthday_yy" value="" class="input_box-quarter" placeholder="--")/
+          %input(type="text" name="birthday_dd" value="" class="input_box-quarter" placeholder="--")/
           日
         %p.gray ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         -# 生年月日のプルダウンはサーバーサイドの作業にて実装
       %p
-        「次へ進む」のボタンを押すことにより、
-        %a{:href => "#"}> 利用規約
-        に同意したものとみなします
-      .btn.login 次へ進む
+        = surround '「次へ進む」のボタンを押すことにより、', 'に同意したものとみなします' do          
+          = link_to "利用規約", "#"
+      .btn.red
+        =link_to "次へ進む","#",class: "btn red__link"
       .about_registrations
-        %a(href="#")>本人情報の登録について>>
+        %p
+          = link_to "本人情報の登録について>>", "#"
   = render "devise/shared/footer"

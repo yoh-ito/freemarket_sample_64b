@@ -4,17 +4,16 @@
   .sessions_main
     .container.make_account
       %p アカウントをお持ちでない方はこちら
-      .btn.make_account 新規会員登録
+      .btn.blue
+        =link_to "新規会員登録","/users/sign_up",class: "btn blue__link"
     .container.sign_in
-      .sns_btn
-        %a.facebook(href="#")
-          Facebookでログイン
-          .sns_logo
-            %i.fab.fa-facebook-square
-        %a.google(href="#")
-          Googleでログイン
-          .sns_logo
-            %i.fab.fa-google
+      .sns_links
+        .btn.facebook
+          =link_to "Facebookでログイン","https://www.facebook.com/",class: "btn facebook__link"
+          = icon("fab", "facebook-square",class: "facebook_logo")
+        .btn.google
+          = icon("fab", "google",class: "google_logo")
+          =link_to "Googleでログイン","https://www.google.com/",class: "btn google__link"
       .account_info
         %input(type="e-mail" name="e-mail" class="input_box" value="" placeholder="メールアドレス")/
         -# サーバーサイド作業にてformメソッドを実装予定
@@ -29,6 +28,7 @@
         %input(type="checkbox" name="" class="robot_checkbox" value="1")/
         .iamnotrobot 私はロボットではありません
         .praivacy_policy プライバシー・利用規約
-      .btn.login ログイン
-      %a(href="#")パスワードをお忘れの方
+      .btn.red
+        =link_to "ログイン","#",class: "btn red__link"
+      = link_to "パスワードをお忘れの方","#", class: "p"
   = render "devise/shared/footer"

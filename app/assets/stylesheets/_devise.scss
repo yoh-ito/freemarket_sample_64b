@@ -22,13 +22,12 @@
   p {
     color: black;
   }
-
+  
   a {
-    color: skyblue;
     text-decoration: none;
   }
 
-  .logo {
+  .app_logo {
     width: 185px;
     height: 50px;
   }
@@ -49,16 +48,16 @@
 
       ul {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         list-style: none;
     
         li {
-          margin-right: 40px;
+          margin: 0 20px;
         }
       }
     }
 
-    a.footer {
+    .footer_li {
       color: black;
       font-size: 10px;
     }  
@@ -76,6 +75,80 @@
     user-select: none;
     display: flex;
     justify-content: center;
+  }
+
+  .btn.blue {
+    background-color: skyblue;
+    
+    &__link {
+      font-size: 14px;
+      text-align: center;          
+      color: white;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+  }
+
+  .btn.red {
+    background-color: red;
+    margin-bottom: 24px;
+    
+    &__link {
+      color: white;
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+  }
+
+  .btn.facebook {
+    background-color: darkblue;
+    margin-bottom: 16px;
+    position: relative;
+
+    &__link {
+      color: white;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .facebook_logo {
+      position: absolute;
+      color: white;
+      font-size: 30px;
+      top: 10px;
+      left: 20px;
+    }
+  }
+
+  .btn.google {
+    background-color: white;
+    margin-bottom: 16px;
+    border: solid;
+    border-width: 1px; 
+    text-align: center;
+    position: relative;
+    
+    &__link {
+      color: black;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .google_logo {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      top: 13px;
+      left: 23px;
+    }
   }
 
   .input_box {
@@ -111,13 +184,6 @@
       display: flex;
       flex-direction: column;
       text-align: center;
-    
-      .btn.make_account {
-        font-size: 14px;
-        color: white;
-        background-color: skyblue;
-        text-align: center;
-      }
     }
     
     .container.sign_in {
@@ -125,49 +191,10 @@
       padding: 30px 65px;
       background-color: white;
     
-      .sns_btn{
-        margin-bottom: 56px;
-        
-        
-        a.facebook {
-          display: block;
-          line-height: 48px;
-          text-align: center;
-          font-size: 11px;
-          margin-bottom: 16px;
-          background-color: darkblue;
-          color: white;
-          position: relative;
-          .sns_logo {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: 0px;
-            left: 20px;
-            font-size: 30px;
-          }  
-        }
-        
-        a.google {
-          display: block;
-          line-height: 48px;
-          text-align: center;
-          font-size: 11px;
-          margin-bottom: 16px;
-          background-color: white;
-          color: black;
-          border: solid;
-          border-width: 1px;
-          position: relative;
-          .sns_logo {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: 0px;
-            left: 20px;
-            font-size: 20px;
-          }  
-        }
+      .sns_links{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
       }
 
       .account_info {
@@ -183,6 +210,7 @@
         margin-bottom: 24px;
         padding: 20px;
         position: relative;
+
         .alert {
           color: red;
           font-size: 12px;
@@ -214,14 +242,6 @@
           font-size: 8px;
           text-align: right;
         }
-      }
-
-      .btn.login {
-        background-color: red;
-        color: white;
-        text-align: center;
-        font-size: 12px;
-        margin-bottom: 24px;
       }
     }
   }
@@ -270,13 +290,6 @@
           }
         }
 
-      .btn.login {
-        background-color: red;
-        color: white;
-        text-align: center;
-        font-size: 12px;
-        margin-bottom: 24px;
-      }
       .about_registrations {
         text-align: right;
       }
