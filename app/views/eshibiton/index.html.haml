@@ -1,0 +1,78 @@
+.wapper  
+  .header
+    .hurima_logo
+  .body
+    .input_list
+      .item_image
+        %p1出品画像
+        %span 必須
+        .item_image_paragraph
+          %input(type="file" name="item_image")
+          //ラベル必須を入れる
+        .input_item_image
+      .item_name
+        .item_name_paragraph
+          %p3商品名
+          %span 必須
+          .item_input_form_name
+            %input(type="text")
+        .item_description
+          .item_name_description
+            %p4商品の説明
+            %span 必須
+          .item_description
+            %input(type="text")
+      .item_category
+        %p4カテゴリー
+        %span 必須 
+        .item_category_form
+          %input(type="text")
+          
+        .item_brand
+          %p5ブランド
+          %span 任意
+          .item_brand_form
+          %input(type="text")
+        .item_status
+          %p6商品の状態
+          %span 必須
+          .item_status_form
+          %input(type="text")
+      .item_delivery
+        %p7配送について
+        .item_delivery_burden
+          %p8配送料の負担
+          %span 必須
+        .item_delevery_burden_input
+          %input(type="text")
+        .item_delivery_area
+          %p9発送元の地域
+          %span 必須
+        .item_delevery_area_input
+          %input(type="text")
+        .item_delevery_day
+          %p10発送までの日数
+          %span 必須
+        .item_delevery_day_input
+          %input(type="text")
+      .item_price_detail
+        価格（¥300〜9,999,999）
+        %p11販売手数料
+        .item_price
+        /販売手数料 rubyを使って計算
+      .item_sell_btn
+        %a.sell_item{:href => "#"} 出品する
+        %a.back_home{:href => "#"} 戻る
+
+  .footer
+    %p禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+
+
+    
+
+
+
+    
+
+
+
