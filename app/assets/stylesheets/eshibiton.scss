@@ -78,7 +78,20 @@
   text-align: center;
   a{
     display: block;
+    width: 200px;
+    font-size: 30px;
     margin-top: 50px;
     text-decoration: none;
+    border:1px solid #333;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    
   }
+}
+.sell_item{
+  margin: 0 auto;
+}
+.back_home{
+  margin: 0 auto;
 }
