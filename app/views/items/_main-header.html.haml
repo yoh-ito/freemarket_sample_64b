@@ -14,6 +14,7 @@
       - if user_signed_in?
         %li.header__form__links__link2
           =link_to "マイページ","#",class: "header__form__links__link2--login"
+          =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__form__links__link2--login"
       - else
         %li.header__form__links__link2
           =link_to "ログイン","/users/sign_in",class: "header__form__links__link2--login"
