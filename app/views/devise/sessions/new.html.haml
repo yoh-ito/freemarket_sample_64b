@@ -28,7 +28,6 @@
           %input(type="checkbox" name="" class="robot_checkbox" value="1")/
           .iamnotrobot 私はロボットではありません
           .praivacy_policy プライバシー・利用規約
-        .btn.red
-          = f.submit 'ログイン', class: 'btn red'
+        = f.submit 'ログイン', class: 'btn red'
       = link_to "パスワードをお忘れの方","#", class: "p"
   = render "devise/shared/footer"
