@@ -64,3 +64,8 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
+
+
+# deviseの導入
+gem 'devise'
+gem 'font-awesome-sass'

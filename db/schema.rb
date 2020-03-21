@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20200317060731) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
+ActiveRecord::Schema.define(version: 20200308140357) do
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
@@ -52,4 +53,23 @@ ActiveRecord::Schema.define(version: 20200317060731) do
   end
 
   add_foreign_key "images", "items"
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "last_name",                           null: false
+    t.string   "first_name",                          null: false
+    t.string   "last_name_kana",                      null: false
+    t.string   "first_name_kana",                     null: false
+    t.string   "nickname",                            null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "password",                            null: false
+    t.date     "birthday",                            null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
 end
