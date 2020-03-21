@@ -1,0 +1,158 @@
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+
+@mixin size($height, $width, $padding) {
+  height: $height;
+  width: $width;
+  padding: $padding;
+}
+@mixin color($backgroundcolor, $color) {
+  background-color: $backgroundcolor;
+  color: $color;
+}
+
+
+.header {
+  @include size(100px, 100%, 0);
+  &__form {
+    @include size(100%, 100%, 0 50px);
+    max-width: 1120px;
+    margin: 0 auto;
+    &__box {
+      @include size(60px, 100%, 0);
+      margin: auto;
+      margin-top: 10px;
+      display: flex;
+      a {
+        list-style: none;
+        margin-right: 10px;
+        float: left;
+      }
+      &--logo {
+        @include size(50px, 140px, 0);
+        object-fit: contain;
+      }
+      &__input {
+        @include size(35px, 100%, 0);
+        margin:10px 0 0 20px;
+        float: right;
+        &--text {
+          @include size(100%, 100%, 5px);
+          float: left;
+        }
+      }
+      &--btn {
+        @include size(35px, 50px, 0);
+        @include color(#3CCACE, 0);
+        margin-top: 10px;
+        float: right;
+        i {
+          @include color(0, white);
+          font-size: 1.2rem;
+          font-family: "Font Awesome 5 Free";
+        }
+      }
+    }
+    &__links {
+      &__link1 {
+        float: left;
+        list-style: none;
+        &--category {
+          text-decoration: none;
+          margin-right: 20px;
+        }
+        &--brand {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.body {
+  @include size(100%, 100%, 0);
+  @include color(white, black );
+  &__title {
+    margin: 0 auto;
+    font-size: 1.2rem;
+  }
+  &__info {
+    
+  }
+  &___info__number {
+
+  }
+  &__info__day {
+
+  }
+  &__info__code {
+
+  }
+  .cards__button{
+
+  }
+}
+
+.footer {
+  &__contents {
+    @include size(350px, 100%, 60px 5% 0 5%);
+    @include color(#272727,0);
+    top: 400px;
+    margin: auto;
+    position: relative;
+    &__menu {
+      @include size(100%, 100%, 0);
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around;
+      &__company {
+        @include size(80%, 20%, 0);
+      }
+      &__search {
+        @include size(60%, 20%, 0);
+      }
+      &__help {
+        @include size(80%, 20%, 0);
+      }
+      .list {
+        @include size(20%, 200px, 0);
+        @include color(0,white);
+        text-decoration: none;
+        font-size: 0.8rem;
+      }
+      h2 {
+        @include color(0,white);
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      p {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+    &__logo {
+      @include size(45px, 100%, 0);
+      max-width: 160px;
+      position: absolute;
+      left: 44%;
+      bottom: 20%;
+      img {
+        @include size(100%, 100%, 0);
+        object-fit: contain;
+      }
+      p {
+        @include color(0,white);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.card-body
+  .body__title
+    クレジットカード情報入力
+  .card-body__form__box__input
+    =text_field_tag 'name','', class: "card-body__form__box__input--text", placeholder: "半角数字のみ"
+    .body__info__day
+      有効期限
+    .body__info__code
+      セキュリティコード
+    =link_to "#",class: "cards__button" do
+      %p
+        追加する
