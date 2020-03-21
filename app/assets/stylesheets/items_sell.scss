@@ -1,7 +1,7 @@
 .wapper {
   background-color: gray;
 }
-.header{
+.header_item{
   height: 100px;
   width: auto;
   background-color: gray;
@@ -17,7 +17,7 @@
   
   
 }
-.body{
+.body_item{
   height: 100%;
   width: auto;
   margin-left: 40px;
@@ -34,20 +34,27 @@
   .item_brand span{
     background-color: green;
   }
-  input{
-    width: 100%; /*親要素いっぱい広げる*/
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 10px 15px; /*ボックスを大きくする*/
-    font-size: 16px;
-    border-radius: 3px; /*ボックス角の丸み*/
-    border: 2px solid #ddd; /*枠線*/
-    box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
+input{
+  width: 100%; /*親要素いっぱい広げる*/
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px; /*ボックスを大きくする*/
+  font-size: 16px;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box; /*横幅の解釈をpadding, borderまでとする*/
   }
-  .item_description input{
-    height: 200px;
-    
-  }
+.item_description textarea,.input_item_image{
+  height: 200px;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 15px; /*ボックスを大きくする*/
+  font-size: 16px;
+  border-radius: 3px; /*ボックス角の丸み*/
+  border: 2px solid #ddd; /*枠線*/
+  box-sizing: border-box;
+}
 }
 .p{
   @include paragraph;
@@ -68,30 +75,33 @@
 .item_price_detail{
   height: 200px;
 }
-.footer{
-  height: 100px;
-  text-align:center
+.footer_item{
+  height: 80px;
   
 }
 .item_sell_btn{
-  height: 150px;
   text-align: center;
+  height: 150px;
   a{
     display: block;
     width: 200px;
     font-size: 30px;
-    margin-top: 50px;
-    text-decoration: none;
+    margin:0 auto;
+    margin-top: 15px;
     border:1px solid #333;
     background-color: red;
-    color: white;
     border-radius: 5px;
-    
+    color: white;
+    text-decoration: none;
   }
 }
-.sell_item{
-  margin: 0 auto;
-}
-.back_home{
-  margin: 0 auto;
+img{
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  height: 200px;
+  }
+.item_price{
+  padding-top: 50px;
 }

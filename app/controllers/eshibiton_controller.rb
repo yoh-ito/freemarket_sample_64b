@@ -1,2 +1,0 @@
-class EshibitonController < ApplicationController
-end
