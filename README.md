@@ -45,20 +45,20 @@
 |first_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|postcode|integer|null:faise|
+|postcode|integer|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |block|string|null:false|
 |building|string|null:false|
 |phone_number|integer|
-|user|references|null:faise, foreign_key:true|
+|user|references|null:false, foreign_key:true|
 ### Association
 - belongs_to :user
 
 ### credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null:faise, foreign_key:true|
+|user|references|null:false, foreign_key:true|
 |customer_id|string|null:false|
 |card_id|string|null:false|
 ### Association
