@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
+  before_action :item_params
+  
   def index
-    @items = Item.all
-   
+    @items = Item.order('created_at DESC').limit(3)
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name,:price, images_attributes: {image_ids: []})
+    @item = Item.find(params[:item_id])
   end
 end

@@ -80,9 +80,9 @@
       新規投稿商品
   %ul.items__list1
     -@items.each do |item| 
-      %a{href: "#", class: "items__list1__category"}
-        .items__list1__category__images
-          =image_tag(item.image_ids, size: "60x60") if item.images.present?
+      = link_to items_path(item), class: "items__list1__category" do
+        .items__list1__category__images 
+          =image_tag item.images.image, alt: "" if item.images.present?
         .items__list1__category--data1
           .items__list1__category--data1__name
             %p 
@@ -105,8 +105,9 @@
       アーカイバ
   %ul.items__list2
     -@items.each do |item| 
-      %a{href: "#", class: "items__list2__brand"}
-        =image_tag item.image_ids, class: 'items__list2__brand--item1' if item.images.present?
+      %a{href: "#", class: "items__list1__category"}
+        .items__list1__category__images 
+          =image_tag item.images, alt: "", type: "file", size: "100×100", class: "items__list1__category__images__img" 
         .items__list2__brand--data2
           .items__list2__brand--data2__name
             %p 
