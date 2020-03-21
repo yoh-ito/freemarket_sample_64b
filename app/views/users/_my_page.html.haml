@@ -1,0 +1,88 @@
+.main
+  %a{href: "#", class: "main__logo"}
+    =image_tag("member_photo_noimage_thumb.png")
+  %p 
+    aa
+
+.body
+  .body__list__gray
+    =link_to root_path, class: "list" do
+      %p
+        マイページ
+        %p2
+          >
+  .body__list
+    =link_to root_path, class: "list" do
+      %p
+        出品する
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        出品した商品-出品中
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        出品した商品-取引中
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        出品した商品-売却済み
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        購入した商品-取引中
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        購入した商品-過去の取引
+        %p2
+          >
+    =link_to root_path, class: "list" do
+      %p
+        お問い合わせ
+        %p2
+          >
+
+  .body__confing
+    設定
+    .body__confing__list
+      =link_to root_path, class: "list" do
+        %p
+          プロフィール
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          発送元・お届け先住所変更
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          支払い方法
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          メール/パスワード
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          本人情報
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          電話番号の確認
+          %p2
+            >
+      =link_to root_path, class: "list" do
+        %p
+          ログアウト
+          %p2
+            >

@@ -1,0 +1,13 @@
+.header
+  -# =form_tag("/", class: "header__form") do |f|
+  .header__form__box 
+    = link_to "#" do
+      =image_tag("logo.png", class: "header__form__box--logo")
+    .header__form__box__input
+      =text_field_tag 'name','', class: "header__form__box__input--text", placeholder: "キーワードから探す" 
+    =button_tag type: 'submit', class: "header__form__box--btn" do
+      =icon('fa', 'search')
+  .header__form__links
+    %li.header__form__links__link1
+      =link_to "カテゴリー","#",class: "header__form__links__link1--category"
+      =link_to "ブランド","#",class: "header__form__links__link1--brand"

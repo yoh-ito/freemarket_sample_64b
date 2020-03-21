@@ -3,8 +3,36 @@
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title FreemarketSample64b
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
+    - flash.each do |key, value|
+      %div{:class => "alert alert-#{key}", :role => "alert"}= value
+    
+    %nav.navbar.navbar-default.navbar-fixed-top.navbar-transparent
+      .container
+        = link_to root_path do
+          %li
+            = image_tag("logo-white.png")
+        %ul.nav.navbar-nav.navbar-right
+          - if logged_in?
+            %li
+              = link_to "#" do
+                = image_tag("icons/heart.png")
+            %li
+              = link_to "#" do
+                = image_tag "icons/camera.png"
+            %li
+              = link_to "#" do
+                = image_tag "icons/logout.png"
+          - else
+            %li
+              = link_to "#" do
+                = image_tag "icons/register.png"
+            %li
+              = link_to "#" do
+                = image_tag "icons/login.png"
     = yield
