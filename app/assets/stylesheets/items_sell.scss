@@ -60,16 +60,7 @@ input{
   @include paragraph;
   display: inline-block;
 }
-.item_image{
-  @include default;
-}
-.item_name{
-  @include default;
-}
-.item_category{
-  @include default;
-}
-.item_delivery{
+.item_image,.item_name,.item_category,.item_delivery{
   @include default;
 }
 .item_price_detail{
