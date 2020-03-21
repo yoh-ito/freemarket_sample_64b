@@ -1,14 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :item_params
-  
   def index
-    @items = Item.order('created_at DESC').limit(3)
-  end
-
-  private
-
-  def item_params
-    @item = Item.find(params[:item_id])
+    @items = Item.includes(:user).where(order('created_at DESC').limit(3)
   end
 
   def show

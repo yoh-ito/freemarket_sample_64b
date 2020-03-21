@@ -80,12 +80,13 @@
       新規投稿商品
   %ul.items__list1
     -@items.each do |item| 
-      = link_to items_path(item), class: "items__list1__category" do
+      = link_to item_images_path(item.id), class: "items__list1__category" do
         .items__list1__category__images 
           =image_tag item.images.image, alt: "" if item.images.present?
         .items__list1__category--data1
           .items__list1__category--data1__name
             %p 
+              =item.buyer_id
               =item.name
           .items__list1__category--data1__content
             %li.items__list1__category--data1__content--price
