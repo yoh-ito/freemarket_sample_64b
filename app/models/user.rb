@@ -9,12 +9,15 @@ class User < ApplicationRecord
   has_many :seling_items, class_name: "Item", foreign_key: "solder_id"
   has_many :sold_items, class_name: "Item",foreign_key: "solder_id"
 
+  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
+
   validates :last_name,           presence: true
   validates :first_name,          presence: true
-  validates :last_name_kana,      presence: true, format: {with: /\A[ァ-ヶー－]+\z/}
-  validates :first_name_kana,     presence: true, format: {with: /\A[ァ-ヶー－]+\z/}
+  validates :last_name_kana,      presence: true
+  validates :first_name_kana,     presence: true
   validates :nickname,            presence: true
   validates :birthday,            presence: true
   validates :email,               presence: true, uniqueness: true
-  validates :encrypted_password,  presence: true, format: { with: /\A[a-z0-9]+\z/}
+  validates :encrypted_password,  presence: true
+
 end

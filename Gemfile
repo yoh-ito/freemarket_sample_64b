@@ -67,3 +67,6 @@ gem 'sass-rails', '~> 5.0'
 # deviseの導入
 gem 'devise'
 gem 'font-awesome-sass'
+
+# reCaptchaの導入
+gem 'recaptcha', require: "recaptcha/rails"
