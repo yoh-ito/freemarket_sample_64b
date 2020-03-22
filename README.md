@@ -40,17 +40,13 @@
 ### adressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|last_name|string|null: false|
-|first_name|string|null: false|
-|last_name_kana|string|null: false|
-|first_name_kana|string|null: false|
+|user_id|reference|null: false, foreign_key:true|
 |postcode|integer|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |block|string|null:false|
 |building|string|null:false|
 |phone_number|integer|
-|user|references|null:false, foreign_key:true|
 ### Association
 - belongs_to :user
 
