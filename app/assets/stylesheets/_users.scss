@@ -20,8 +20,9 @@ html,body {
   @include size(120px , 700px, 0);
   background: linear-gradient(#DBFF71, #05FBFF,);
   position: relative;
+  display: none;
   list-style: none;
-  left: 50%;
+  left: 38%;
   img {
     @include size(60px, 60px, 0);
     position: absolute;
@@ -44,15 +45,16 @@ html,body {
 }
 
 .user-main__content {
-  @include size(600px, 700px, 0);
-  @include color(#cccccc, 0);
-  left: 50%;
-  position: relative;
+  @include size(500px, 700px, 0);
+  @include color(#dddddd, 0);
+  left: 38%;
+  font-size: 1.2rem;
+  text-align: center;
+  position: absolute;
   &__info {
   @include size(500px, 700px, 0);
-  @include color(#cccccc, 0);
-  margin-top: 100px;
-  position: absolute;
+  @include color(#eeeeee, 0);
+  margin-top: 5px;
   }
 }
 

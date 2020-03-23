@@ -18,18 +18,19 @@ html,body {
 
 .side-body {
   @include size(250px, 300px, 0);
-  bottom: 1px;
   position: absolute;
+  top: 100px;
+  left: 200px;
   &__list__gray {
-    @include size(40px, 300px, 2px);
-    @include color(#CCCCCC, 0);
+    @include size(40px, 295px, 0);
+    @include color(#dddddd, 0);
     list-style: none;
-    max-width: 100%;
     justify-content: space-around;
+    margin-left: 2px;
     .list {
       @include color(0,#272727);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 1.0rem;
       li {
         top: 10px;
         position: relative;
@@ -51,13 +52,13 @@ html,body {
       @include size(40px, 200px , 2px);
       @include color(#FFFFFF, #272727);
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 1.0rem;
       bottom: 1px;
       li {
         display: block;
         top: 1px;
         position: relative;
-        background-color: #CCCCCC;
+        background-color: #dddddd;
         line-height: 40px;
         bottom: 1px;
       }
@@ -70,7 +71,7 @@ html,body {
   }
   &__confing {
     @include size(350px, 300px , 0);
-    @include color(#999999, 0);
+    @include color(#bbbbbb, 0);
     font-size: 1.0rem;
     bottom: 2px;
     &__list {
@@ -85,13 +86,13 @@ html,body {
         @include size(40px, 300px , 0);
         @include color(#FFFFFF,#272727);
         text-decoration: none;
-        font-size: 0.8rem;
+        font-size: 1.0rem;
       }
       li {
         display: block;
         margin-bottom: 18px;
         position: relative;
-        background-color: #CCCCCC;
+        background-color: #dddddd;
         line-height: 40px;
       }
         P2 {
