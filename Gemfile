@@ -67,3 +67,4 @@ gem 'sass-rails', '~> 5.0'
 # deviseの導入
 gem 'devise'
 gem 'font-awesome-sass'
+gem 'fog-aws'
