@@ -71,3 +71,5 @@ gem 'fog-aws'
 
 # reCaptchaの導入
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'carrierwave'
+gem 'mini_magick'
