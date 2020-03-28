@@ -109,19 +109,31 @@
         .input-form_price { 
           height: 50px;
           width: 100%;
-          padding-left: 240px;
+          padding-right: 20px;
           border-radius: 3px;
           border: 1.5px solid #ddd;
+          text-align: end;
+        }
+        input[type=number]::-webkit-inner-spin-button, /*販売価格のスピンボタン削除*/
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
         }
       }
     }
     .item_price_fee {
       display: flex;
+      height: 50px;
+      border-bottom:solid 1px #dcdcdc;
       p {
         font-size: 0.9rem;
         color: #333333;
         margin-right: 400px;
       }
+    }
+    #item_price_number {
+      width: 80px;
+      text-align: end;
     }
     .item_sell_btn{
       height: 100%;

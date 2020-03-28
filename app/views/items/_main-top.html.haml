@@ -83,11 +83,11 @@
       -@items.each do |item| 
         = link_to item_path(item.id), class: "items__list1__category" do
           .items__list1__category__images 
-            =image_tag item.images.image, alt: "" if item.images.present?
+            -item.images.each do |image|
+              =image_tag item.images, alt: "" 
           .items__list1__category--data1
             .items__list1__category--data1__name
               %p 
-                =item.buyer_id
                 =item.name
             .items__list1__category--data1__content
               %li.items__list1__category--data1__content--price
@@ -107,9 +107,10 @@
       アーカイバ
   %ul.items__list2
     -@items.each do |item| 
-      %a{href: "#", class: "items__list1__category"}
+      = link_to item_path(item.id), class: "items__list1__category" do
         .items__list1__category__images 
-          =image_tag item.images, alt: "", type: "file", size: "100×100", class: "items__list1__category__images__img" 
+          -item.images.each do |image|
+            =image_tag item.images, alt: ""
         .items__list2__brand--data2
           .items__list2__brand--data2__name
             %p 
