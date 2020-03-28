@@ -1,10 +1,14 @@
-$(function () {
-  $('#price-form').change(function () {
-    var fee = $('#price-form').val();
-    var feenumber = parseInt(fee);
+window.onload = function() {
+  var input_number = document.getElementById('item_price_number');
+  input_number.textContent = 'ー';
+}
 
-    var result = feenumber / 0.03
-
-    $('#item_price_number').val(result)
-  });
-});
+function myFunc() {
+  var input_number = document.getElementById("price-form").value;
+  if (input_number >= 300 && input_number <= 9999999) {
+    input_number = "¥ " + input_number * 0.03
+  } else {
+    input_number = "ー"
+  }
+  document.getElementById("item_price_number").innerHTML = input_number;
+};

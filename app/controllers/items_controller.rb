@@ -1,15 +1,13 @@
 class ItemsController < ApplicationController
 
   def index
-   @items = Item.find(1)
+   @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
-  
   end
 
   def create
-    
   end
 
   def show
@@ -17,6 +15,5 @@ class ItemsController < ApplicationController
 
   def edit
   end
-
 end
 
