@@ -5,14 +5,12 @@
       %h1 本人情報の登録
   .registrations_main
     .container.inner
-      = form_for @address, url: new_address_path do |f|
+      = form_for[@address] do |f|
         .group
           %h2
             郵便番号
             %span 必須
-          = f.text_field :postcodee, class: 'input_box', placeholder: '例)1234567', autofocus: true
-          - if resource.errors[:postcode].present?
-            %p.red ニックネームを入力してください
+          = f.text_field :postcode, class: 'input_box', placeholder: '例)1234567', autofocus: true
         .group
           %h2
             都道府県
