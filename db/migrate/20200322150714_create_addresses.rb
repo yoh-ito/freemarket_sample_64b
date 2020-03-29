@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.string :block
       t.string :building
       t.string :phone_number
-      t.integer :user_id,        null: false, foreign_key: true
+      t.references :user,        null: false, foreign_key: true
       t.timestamps
     end
   end
