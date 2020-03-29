@@ -6,9 +6,9 @@ class User < ApplicationRecord
   has_many :items
   has_one :credit_card
   has_one :address
-  has_many :buy_items, class_name: "Item", foreign_key: "buyer_id"
-  has_many :seling_items, class_name: "Item", foreign_key: "solder_id"
-  has_many :sold_items, class_name: "Item",foreign_key: "solder_id"
+  has_many :buy_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :seling_items, -> { where("buyer_id is NULL") }, foreign_key: "solder_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "solder_id", class_name: "Item"
 
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
 
@@ -20,5 +20,4 @@ class User < ApplicationRecord
   validates :birthday,            presence: true
   validates :email,               presence: true, uniqueness: true
   validates :encrypted_password,  presence: true, format: { with: /\A(?=.*[^\d])+/, allow_blank: true}
-
 end

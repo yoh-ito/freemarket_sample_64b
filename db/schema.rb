@@ -24,20 +24,41 @@ ActiveRecord::Schema.define(version: 20200322150714) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",        null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                          null: false
-    t.text     "text",            limit: 65535, null: false
-    t.string   "item_status",                   null: false
-    t.integer  "price",                         null: false
-    t.string   "delivery_charge",               null: false
-    t.string   "delivery_area",                 null: false
-    t.string   "delivery_days",                 null: false
-    t.integer  "category_id",                   null: false
+    t.string   "name",                                      null: false
+    t.text     "text",            limit: 65535,             null: false
+    t.string   "item_status",                               null: false
+    t.integer  "price",                                     null: false
+    t.string   "delivery_charge",                           null: false
+    t.string   "delivery_days",                             null: false
+    t.integer  "category_id",                               null: false
     t.integer  "brand_id"
     t.integer  "solder_id"
     t.integer  "buyer_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.integer  "delivery_area",                 default: 0, null: false
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
   end
@@ -60,4 +81,5 @@ ActiveRecord::Schema.define(version: 20200322150714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "images", "items"
 end
