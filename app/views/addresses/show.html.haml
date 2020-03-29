@@ -1,0 +1,40 @@
+.device.body
+  = render "devise/shared/header"
+  .registrations_main
+    .container.head
+      %h1 本人情報
+  .registrations_main
+    .container.inner
+      .group
+        %span
+          郵便番号
+        %h2{:style => "text-align:center;"}
+          = @address.postcode
+      .group
+        %span
+          都道府県
+        %h2{:style => "text-align:center;"}
+          = @address.prefecture
+      .group
+        %span
+          市区町村
+        %h2{:style => "text-align:center;"}
+          = @address.city
+      .group
+        %span
+          番地
+        %h2{:style => "text-align:center;"}
+          = @address.block
+      .group
+        %span
+          建物名
+        %h2{:style => "text-align:center;"}
+          = @address.building
+      .group
+        %span
+          電話番号
+        %h2{:style => "text-align:center;"}
+          = @address.phone_number
+      .btn.red
+        = link_to '変更する', edit_address_path, :style=>"color:white;"
+  = render "devise/shared/footer"
