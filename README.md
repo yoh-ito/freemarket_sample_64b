@@ -41,13 +41,13 @@
 ### adressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key:true|
+|user_id|string|null: false, foreign_key:true|
 |postcode|integer|null:false|
 |prefecture|string|null:false|
 |city|string|null:false|
 |block|string|null:false|
 |building|string|null:false|
-|phone_number|integer|
+|phone_number|string|
 ### Association
 - belongs_to :user
 

@@ -6,12 +6,12 @@ class AddressesController < ApplicationController
   end
 
   def create
-    Adress.create(address_params)
+    Address.create(address_params)
     redirect_to root_path
   end
 
   private
   def address_params
-    params.require(:address).merge(user_id: current_user.id)
+    params.require(:address).permit(:postcode, :prefecture, :city, :block, :building, :phone_number).merge(user_id: current_user.id)
   end
 end
