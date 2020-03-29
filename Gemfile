@@ -64,6 +64,7 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'sass-rails', '~> 5.0'
+gem 'jquery-rails'
 
 
 # deviseの導入
