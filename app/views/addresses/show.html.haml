@@ -8,33 +8,33 @@
       .group
         %span
           郵便番号
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.postcode
       .group
         %span
           都道府県
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.prefecture
       .group
         %span
           市区町村
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.city
       .group
         %span
           番地
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.block
       .group
         %span
           建物名
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.building
       .group
         %span
           電話番号
-        %h2{:style => "text-align:center;"}
+        %h4
           = @address.phone_number
       .btn.red
-        = link_to '変更する', edit_address_path, :style=>"color:white;"
+        = link_to '変更する', edit_address_path
   = render "devise/shared/footer"
