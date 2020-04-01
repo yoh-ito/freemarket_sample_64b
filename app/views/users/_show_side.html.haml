@@ -1,7 +1,7 @@
 
 .side-body
   .side-body__list__gray
-    =link_to root_path, class: "list" do
+    =link_to new_user_path, class: "list" do
       %li
         マイページ
         %p2
@@ -50,7 +50,7 @@
           本人情報
           %p2
             >
-      =link_to root_path, class: "list" do
+      = link_to new_card_path, class: "list" do
         %li
           支払い方法
           %p2

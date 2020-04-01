@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "items#index"
-  resources :items, only: [:show , :edit]
+  resources :items, only: [:index, :show , :edit, :new, :create]
+  resources :images, only: [:index]
   resources :users, only: [:new , :show]
   resources :users_side, only: [:new , :show]
-  resources :cards, only: [:index,:new,:show]do
+  resources :addresses, only: [:new, :create, :show, :edit, :update]
+  resources :cards, :cards_delate, only: [:index, :new, :show]do
     ENV['PAYJP_PRIVATE_KEY']
     ENV['PAYJP_KEY']
     collection do

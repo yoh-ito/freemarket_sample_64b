@@ -3,19 +3,16 @@ class CardsController < ApplicationController
   require "payjp"
   
   def new
-    #current_user.idでログインしてるユーザーのみ登録ができるようにしてます
-    
-    #card = Card.where(user_id: current_user.id)
-    
-    #カード登録がまだならshowページへ飛ぶ
-    
+    #current_user.idでログインしてるユーザーのみ登録ができるようにしてます   
+    #card = Card.where(user_id: current_user.id)    
+    #カード登録がまだならshowページへ飛ぶ    
     #redirect_to action: "show" if card.exists?
   end
 
   def pay #payjpとCardのデータベース作成
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
-       # paramsの中にjsで作った'payjpTokenが存在するか確かめる
+      #paramsの中にjsで作った'payjpToken'が存在するか確かめる
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(
@@ -48,13 +45,13 @@ class CardsController < ApplicationController
   end
 
   def show #Cardのデータpayjpに送り情報を取り出す
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to action: "new" 
-    else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-    end
+    #card = Card.where(user_id: current_user.id).first
+    #if card.blank?
+      #redirect_to action: "new" 
+    #else
+      #Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      #customer = Payjp::Customer.retrieve(card.customer_id)
+      #@default_card_information = customer.cards.retrieve(card.card_id)
+    #end
   end
 end

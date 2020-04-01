@@ -16,6 +16,8 @@ html,body {
   color: $color;
 }
 
+
+
 .side-body {
   @include size(250px, 300px, 0);
   position: absolute;
