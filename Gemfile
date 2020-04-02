@@ -65,6 +65,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'sass-rails', '~> 5.0'
 
+# activehashの導入
+gem 'active_hash'
+
 
 # deviseの導入
 gem 'devise'
