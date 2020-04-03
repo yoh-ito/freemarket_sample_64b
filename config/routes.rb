@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "items#index"
-  resources :items, only: [:index, :show , :edit, :new, :create]
+  resources :items, only: [:show , :edit, :new]
   resources :images, only: [:index]
-  resources :users, only: [:new , :show]
+  resources :users, only: [:new]
   resources :users_side, only: [:new , :show]
   resources :addresses, only: [:new, :create, :show, :edit, :update]
   resources :cards, :cards_delate, only: [:index, :new, :show]do
@@ -20,3 +20,4 @@ Rails.application.routes.draw do
     end
   end
 end
+
