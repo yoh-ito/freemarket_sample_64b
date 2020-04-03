@@ -16,8 +16,7 @@
                   ドラッグアンドドロップ
                   %br
                     またはクリックしてファイルをダウンロード
-                =i.file_field :url, class: 'file'
-        .input_item_image-new
+                =i.file_field :url, class: 'file',name:"image[]", multiple: true
       .item_name
         .text
           %p 商品名

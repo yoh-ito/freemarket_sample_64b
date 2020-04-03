@@ -12,3 +12,7 @@ function myFunc() {
   }
   document.getElementById("item_price_number").innerHTML = input_number;
 };
+$(function){
+  var file_field = document.querySelector('input[type=file]')
+  
+}

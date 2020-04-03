@@ -79,4 +79,3 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # binding.pryの導入
-gem 'pry-rails'
