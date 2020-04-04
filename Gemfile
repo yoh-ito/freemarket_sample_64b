@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -60,8 +61,7 @@ end
 
 #      Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'haml-rails',
-gem 'sass-rails', '~> 5.0'
+gem 'haml-rails'
 
 
 # deviseの導入
@@ -76,7 +76,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # binding.pryの導入
-gem 'pry-rails'
+#gem 'pry-rails'
 
 # pay.jpの導入
 gem 'payjp'
