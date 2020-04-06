@@ -64,6 +64,7 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'sass-rails', '~> 5.0'
+gem 'ancestry'
 
 # activehashの導入
 gem 'active_hash'
