@@ -533,6 +533,7 @@ html,body {
         position: absolute;
         left: 44%;
         bottom: 20%;
+        text-decoration: none;
         img {
           @include size(100%, 100%, 0);
           object-fit: contain; 
