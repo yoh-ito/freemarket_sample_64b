@@ -9,14 +9,14 @@
           %span 必須
         .item_image_paragraph
           =f.fields_for :images do |i|
-            = i.label :url, class: "image-file" do
+            = i.label :image, class: "image-file" do
               .file-btn
                 =icon("fas", "camera",class: "icon")
                 %p 
                   ドラッグアンドドロップ
                   %br
                     またはクリックしてファイルをダウンロード
-                =i.file_field :url, class: 'file'
+                =i.file_field :image, class: 'file'
       .item_name
         .text
           %p 商品名
@@ -33,7 +33,7 @@
           %p カテゴリー
           %span 必須 
         .item_category_form
-          = f.select :category, [["レディース", "レディース"],["メンズ", "メンズ"],["シューズ", "シューズ"],["時計","時計"],["本","本"],["バッグ","バッグ"]],{include_blank: "選択してください"},class: "input-select"
+          = f.collection_select :category_id, @category_parent,:id,:name,{include_blank: "選択してください"},class: "input-select",id: "parent-form"
       .item_brand
         .text
           %p ブランド
