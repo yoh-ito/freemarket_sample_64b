@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "items#index"
-  resources :items, only: [:show , :edit, :new]
+  resources :items, only: [:show , :edit, :new] do
+    member do
+      get 'buy_confirmation'
+      post 'payment'
+      get 'buy_complete'
+    end
+end
+
   resources :images, only: [:index]
   resources :users, only: [:new]
   resources :users_side, only: [:new , :show]
