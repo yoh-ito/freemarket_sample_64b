@@ -36,8 +36,13 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  def purchase
-    
+  def buy_confirmation
+  end
+
+  def payment
+  end
+
+  def buy_complete
   end
 
   private
