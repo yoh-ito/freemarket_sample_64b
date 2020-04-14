@@ -229,16 +229,22 @@
       background-color: green;
     }
    }
-  img{
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    height: 200px;
-    }
   }
 
   .footer_item{
     height: 80px;
   }
+}
+.image_box{
+  display: flex;
+  width: 100%;
+  flex-wrap
+  img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    height: 100px;}
 }
