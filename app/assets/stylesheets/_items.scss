@@ -456,8 +456,7 @@ html,body {
       }
     }
   }
-  
-  .footer {
+  .top_footer {
     &__image5 {
       @include size(350px, 100%, 100px 70px);
       background-image: url(bg-appBanner-pict.jpg);
