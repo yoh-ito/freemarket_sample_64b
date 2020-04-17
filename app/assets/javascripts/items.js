@@ -18,8 +18,9 @@ $(function(){
       var html= `
       <div>
         <img src="${src}">
-        <bott
-      </div>
+        <div class="destroy">
+          削除
+        </div>
       `
 
       $('.image_box').append(html);
