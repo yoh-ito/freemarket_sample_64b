@@ -11,7 +11,6 @@
         .image_box
         .item_image_paragraph
           =f.fields_for :images do |i|
-            = i.label :image do
             = i.label :image, class: "image-file" do
               .file-btn
                 =icon("fas", "camera",class: "icon")
