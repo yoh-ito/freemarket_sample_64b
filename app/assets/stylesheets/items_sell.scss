@@ -234,9 +234,9 @@
 }
 .image_box{
   display: flex;
-  width: 100px;
-  flex-wrap
-  .img{
+  width: 100%;
+  flex-wrap: wrap;
+ img{
     margin-left: 10px;
     margin-right: 10px;
     width: 100px;

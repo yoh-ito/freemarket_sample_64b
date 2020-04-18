@@ -12,19 +12,19 @@ $(function(){
   $('.file').change(function(){
     var file = $('input[type="file"]').prop('files')[0];
     var fileReader = new FileReader();
-
     fileReader.onloadend = function() {
       var src = fileReader.result
       var html= `
+      <div>
         <img src="${src}">
+
         <div class="destroy">
           削除
         </div>
+      </div>
       `
-
       $('.image_box').append(html);
     }
-    
     fileReader.readAsDataURL(file);
   });
 });
