@@ -17,9 +17,10 @@ $(function(){
       var html= `
       <div>
         <img src="${src}">
-
         <div class="destroy">
-          削除
+          <button type="button">
+            削除
+          </button>
         </div>
       </div>
       `
