@@ -250,9 +250,11 @@
         } 
       }
     }
-    .app_logo {
-      width: 160px;
-      margin-top: 30px;
+    .footer__logo {
+      .app_logo {
+        width: 160px;
+        margin-top: 30px;
+      }
     }
     h3 {
       font-size: 0.8rem;
