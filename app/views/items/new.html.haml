@@ -8,6 +8,7 @@
         .text
           %p 出品画像
           %span 必須
+        .image_box
         .item_image_paragraph
           =f.fields_for :images do |i|
             = i.label :image, class: "image-file" do
