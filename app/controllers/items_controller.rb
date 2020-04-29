@@ -34,10 +34,20 @@ class ItemsController < ApplicationController
     end
   end
 
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+  end
+
   def show
   end
 
   def edit
+    @item = Item.find(params[:id])
+    @category_parent = ["---"]
+    @category_parent= Category.where(ancestry: nil).each do |parent|
+     @category_parent<<parent.name
+    end
   end
 
   def buy_confirmation

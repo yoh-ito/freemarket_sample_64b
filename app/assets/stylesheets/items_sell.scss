@@ -18,6 +18,15 @@
     padding: 50px;
     background-color: white;
     border-radius: 3px;
+    .body_item-title {
+      width: 100%;
+     text-align: center;
+     margin-bottom: 40px;
+      .title {
+        font-size: 1.5rem;
+        color: #414141;
+      }
+    }
     .item_image {
       margin-bottom: 50px;
       .item_image_paragraph {
