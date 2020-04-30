@@ -59,7 +59,11 @@
       margin-bottom: 40px;
     }
     .item_category {
+      margin-bottom: 5px;
+    }
+    p.error-message-category{
       margin-bottom: 40px;
+      color: red;
     }
     .item_brand {
       margin-bottom: 40px;
@@ -117,6 +121,13 @@
           margin: 0;
         }
       }
+      p.error-message-price{
+        padding-top: 25px;
+        text-align: left;
+        clear:both;
+        color: red;
+      }
+
     }
     .item_price_fee {
       display: flex;
@@ -163,6 +174,10 @@
           color: #87cefa;
         }
       }
+    }
+
+    p.error-message{
+      color:red;
     }
     
     select::-ms-expand {
