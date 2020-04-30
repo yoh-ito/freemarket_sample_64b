@@ -34,7 +34,7 @@ $(function () {
     var parentCategory = document.getElementById('parent-form').value;
     if (parentCategory !=""){
       $.ajax({
-        url: 'category_children',
+        url: 'items/category_children',
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
@@ -60,9 +60,9 @@ $(function () {
   //子カテゴリーを選択したら発火
   $('.item_category').on('change', '#children-form', function () {
     var childCategoryId = $('#children-form option:selected').data('category');
-    if (childCategoryId != "---") {
+    if (childCategoryId != "") {
       $.ajax({
-        url: 'category_grandchildren',
+        url: 'items/category_grandchildren',
         type: 'GET',
         data: { child_name: childCategoryId },
         dataType: 'json'
