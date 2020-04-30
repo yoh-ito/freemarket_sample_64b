@@ -22,21 +22,26 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item=Item.create(item_params)
+    @item=Item.new(item_params)
     @category_parent = ["---"]
     @category_parent= Category.where(ancestry: nil).each do |parent|
      @category_parent<<parent.name
     end
     if @item.save
-      redirect_to root_path , alert: '出品しました'
+      redirect_to root_path 
     else
-      render :new ,alert: '出品できませんでした'
+      render :new 
     end
   end
 
   def update
     item = Item.find(params[:id])
     item.update(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def show
@@ -44,9 +49,10 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @image = @item.image_ids
     @category_parent = ["---"]
     @category_parent= Category.where(ancestry: nil).each do |parent|
-     @category_parent<<parent.name
+      @category_parent<<parent.name
     end
   end
 
