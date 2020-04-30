@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item=Item.new(item_params)
+    @item=Item.create(item_params)
     @category_parent = ["---"]
     @category_parent= Category.where(ancestry: nil).each do |parent|
      @category_parent<<parent.name
