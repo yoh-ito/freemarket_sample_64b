@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
 end
 
-  resources :images, only: [:index]
+  #resources :images, only: [:index]
   resources :users, only: [:new]
   resources :users_side, only: [:new , :show]
   resources :addresses, only: [:new, :create, :show, :edit, :update]
