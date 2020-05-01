@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item_information,only:[:show,:destroy]
 
   def index
    @items = Item.includes(:images).order('created_at DESC').limit(3)
@@ -36,22 +37,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item=Item.find(params[:id])
-    @image = @item.images.first
-    @images = @item.images.all
-    @solder=User.find(@item[:solder_id])
-    @grandchild_category = Category.find(@item[:category_id])
-    @child_category = @grandchild_category.parent
-    @parent_category = @child_category.parent
-    @delivery_area= Prefecture.find(@item[:delivery_area])
-
   end
 
   def edit
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.solder_id == current_user.id
       @item.destroy
     end
@@ -74,6 +65,18 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image]).merge(solder_id: current_user.id)
+  end
+
+  def set_item_information
+    @item = Item.find(params[:id])
+    @image = @item.images.first
+    @images = @item.images.all
+    @solder=User.find(@item[:solder_id])
+    @grandchild_category = Category.find(@item[:category_id])
+    @child_category = @grandchild_category.parent
+    @parent_category = @child_category.parent
+    @delivery_area= Prefecture.find(@item[:delivery_area])
+
   end
   
 
