@@ -50,6 +50,9 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def destroy
+  end
+
   def buy_confirmation
   end
 
@@ -58,6 +61,7 @@ class ItemsController < ApplicationController
 
   def buy_complete
   end
+
 
   private
   
