@@ -36,12 +36,9 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    item.update(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :edit
-    end
+    item.update!(item_params)
+    redirect_to root_path(item.id)
+  
   end
 
   def show
@@ -60,8 +57,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    @image = @item.image_ids
+    @item = Item.includes(:images).find(params[:id])
     @category_parent = ["---"]
     @category_parent= Category.where(ancestry: nil).each do |parent|
       @category_parent<<parent.name

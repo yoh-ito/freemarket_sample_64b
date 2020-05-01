@@ -79,7 +79,7 @@
         .item_price_number
           %p
             ¥
-          = f.number_field :price, placeholder: "0", class: "input-form_price",id: "price-form"
+          = f.number_field :price, placeholder: "0", class: "input-form_price",id: "price-form", onKeyUp: "myFunc()"
       .item_price_fee
         %p
           販売手数料(3%)
@@ -88,19 +88,20 @@
         .submit-btn
           =f.submit "出品する", class: "listing_button"
           =link_to "戻る","#"
-  .send_footer
-    .links
-      %ul
-        %li
-          = link_to "プライバシーポリシー","#",class: "footer_li"
-        %li
-          = link_to "FURIMA利用規約","#",class: "footer_li"
-        %li
-          = link_to "特定商取引に関する表記","#",class: "footer_li"
-    .footer__logo
-      = link_to root_path do
-        = image_tag "logo-white.png",class:"app_logo"
-    %h3 © FURIMA
+  .footer_item
+    .send_footer
+      .links
+        %ul
+          %li
+            = link_to "プライバシーポリシー","#",class: "footer_li"
+          %li
+            = link_to "FURIMA利用規約","#",class: "footer_li"
+          %li
+            = link_to "特定商取引に関する表記","#",class: "footer_li"
+      .footer__logo
+        = link_to root_path do
+          = image_tag "logo-white.png",class:"app_logo"
+      %h3 © FURIMA
 
  
 
