@@ -71,13 +71,14 @@ gem 'active_hash'
 # deviseの導入
 gem 'devise'
 gem 'font-awesome-sass'
-gem 'carrierwave'
+
 gem 'fog-aws'
 
 # reCaptchaの導入
 gem 'recaptcha', require: "recaptcha/rails"
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+#gem 'ancestry'
 
 # binding.pryの導入
 #gem 'pry-rails'
