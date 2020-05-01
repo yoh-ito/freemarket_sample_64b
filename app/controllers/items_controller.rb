@@ -51,7 +51,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item = Item.find(params[:id])
+    if @item.solder_id == current_user.id
+      @item.destroy
+    end
+    redirect_to root_path
   end
+
+
 
   def buy_confirmation
   end
