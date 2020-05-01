@@ -78,6 +78,7 @@ gem 'fog-aws'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'carrierwave'
 gem 'mini_magick'
+#gem 'ancestry'
 
 # binding.pryの導入
 #gem 'pry-rails'
