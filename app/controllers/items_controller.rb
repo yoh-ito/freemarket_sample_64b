@@ -25,10 +25,10 @@ class ItemsController < ApplicationController
     @item=Item.new(item_params)
     @category_parent = ["---"]
     @category_parent= Category.where(ancestry: nil).each do |parent|
-     @category_parent<<parent.name
+    @category_parent<<parent.name
     end
     if @item.save
-      redirect_to root_path 
+      redirect_to root_path , alert: '出品しました'
     else
       render :new 
     end
