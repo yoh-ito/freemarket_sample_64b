@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20200404130015) do
     t.integer  "buyer_id"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "categories_fk_1", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -92,4 +94,5 @@ ActiveRecord::Schema.define(version: 20200404130015) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories", name: "categories_fk_1", on_update: :cascade, on_delete: :nullify
 end
