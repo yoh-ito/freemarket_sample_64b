@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path , alert: '出品しました'
     else
+      @item.images.build
       render :new 
     end
   end
