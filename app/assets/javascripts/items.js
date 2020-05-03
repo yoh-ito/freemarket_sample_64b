@@ -12,6 +12,8 @@ $(function(){
     });
   });
 
+if(file = nil){
+
   $('.file').change(function(){
     var file = $('input[type="file"]').prop('files')[0];
     var fileReader = new FileReader();
@@ -30,5 +32,9 @@ $(function(){
       $('.image_box').append(html);
     }
     fileReader.readAsDataURL(file);
+    });
   });
-});
+else{
+  $('.item_image_paragraph').remove()
+}
+}
