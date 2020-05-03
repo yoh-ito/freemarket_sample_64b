@@ -67,6 +67,8 @@ class ItemsController < ApplicationController
 
   def buy_confirmation
     @item = Item.find(params[:id])
+    @address = Address.find(current_user[:id])
+    @prefecture = Prefecture.find(@address[:prefecture])
     if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
