@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item_information,only:[:show,:destroy]
   require "payjp"
   before_action :set_card, only:[:buy_confirmation, :payment, :buy_complete]
   before_action :set_pay_jp_api_key, only: [:payment]
@@ -45,18 +46,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item=Item.find(params[:id])
-    @image = @item.images.first
-    @images = @item.images.all
-    @solder=User.find(@item[:solder_id])
-    @grandchild_category = Category.find(@item[:category_id])
-    @child_category = @grandchild_category.parent
-    @parent_category = @child_category.parent
-    @delivery_charge = Deliverycharge.find(@item[:delivery_charge])
-    @delivery_area= Prefecture.find(@item[:delivery_area])
-    @delivery_days= Deliverydays.find(@item[:delivery_days])
-    @item_status=Itemstatus.find(@item[:item_status])
-
   end
 
   def edit
@@ -67,8 +56,19 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.solder_id == current_user.id
+      @item.destroy
+    end
+    redirect_to root_path
+  end
+
+
+
   def buy_confirmation
     @item = Item.find(params[:id])
+    @address = Address.find(current_user[:id])
+    @prefecture = Prefecture.find(@address[:prefecture])
     if @card.present?
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -109,10 +109,23 @@ class ItemsController < ApplicationController
   def buy_complete
   end
 
+
   private
   
   def item_params
     params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image]).merge(solder_id: current_user.id)
+  end
+
+  def set_item_information
+    @item = Item.find(params[:id])
+    @image = @item.images.first
+    @images = @item.images.all
+    @solder=User.find(@item[:solder_id])
+    @grandchild_category = Category.find(@item[:category_id])
+    @child_category = @grandchild_category.parent
+    @parent_category = @child_category.parent
+    @delivery_area= Prefecture.find(@item[:delivery_area])
+
   end
 
   def set_card
