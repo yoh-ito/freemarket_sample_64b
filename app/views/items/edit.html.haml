@@ -31,7 +31,7 @@
           %span 必須
         =f.text_area :text, maxlength:'1000', placeholder: "商品の説明（必須 1,000文字以内（色、重さ、定価、注意点など)", class: "item-text_field"
         -if @item.errors[:text].any?
-          %p.error-message 選択してください  
+          %p.error-message 入力してください
       .item_category
         .text
           %p カテゴリー
@@ -41,6 +41,8 @@
           = f.select :category_id, options_for_select(@category_child_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.parent.id), {}, {class: 'input-select'}
           = f.select :category_id, options_for_select(@category_grandchild_array.map{|c|[c[:name], c[:id], {'data-category'=>c[:id], 'id'=>c[:id]}]}, @item.category.id), {}, {class: 'input-select'}
           -# = f.text_field :category_id, id: 'grand_child_result_id', type: 'hidden'
+      -if @item.errors[:category_id].any?
+        %p.error-message-category 入力してください      
       .item_brand
         .text
           %p ブランド
