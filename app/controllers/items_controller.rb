@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     @category_parent<<parent.name
     end
     if @item.save
-      redirect_to root_path , alert: '出品しました'
+      redirect_to root_path , alert: '商品を出品しました'
     else
       @item.images.build
       render :new 
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     item.update!(item_params)
-    redirect_to root_path(item.id)
+    redirect_to root_path(item.id), alert: '商品情報を変更しました'
   
   end
 
@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to root_path
+    redirect_to root_path alert: '商品を削除しました'
   end
 
 
@@ -89,7 +89,7 @@ class ItemsController < ApplicationController
         @card_src = "discover.svg"
       end
     else
-      redirect_to new_card_path
+      redirect_to new_card_path,alert: 'カード情報を登録してください'
     end
   end
 
