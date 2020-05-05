@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def index
    @items = Item.includes(:images).order('created_at DESC').limit(3)
+   @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
   end
 
   def new
@@ -112,7 +113,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image]).merge(solder_id: current_user.id)
+    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image, :id]).merge(solder_id: current_user.id)
   end
 
   def set_item_information
