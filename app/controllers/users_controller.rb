@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+
   private
 
   def set_category_pull
     @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
   end
-
 end
