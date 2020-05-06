@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
 
   def index
    @items = Item.includes(:images).order('created_at DESC').limit(3)
+   @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
   end
 
   def new
@@ -32,7 +33,7 @@ class ItemsController < ApplicationController
     @category_parent<<parent.name
     end
     if @item.save
-      redirect_to root_path , alert: '出品しました'
+      redirect_to root_path , alert: '商品を出品しました'
     else
       @item.images.build
       render :new 
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     item.update!(item_params)
-    redirect_to root_path(item.id)
+    redirect_to root_path(item.id), alert: '商品情報を変更しました'
   
   end
 
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to root_path
+    redirect_to root_path alert: '商品を削除しました'
   end
 
 
@@ -88,7 +89,7 @@ class ItemsController < ApplicationController
         @card_src = "discover.svg"
       end
     else
-      redirect_to new_card_path
+      redirect_to new_card_path,alert: 'カード情報を登録してください'
     end
   end
 
@@ -112,7 +113,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image]).merge(solder_id: current_user.id)
+    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image, :id]).merge(solder_id: current_user.id)
   end
 
   def set_item_information
