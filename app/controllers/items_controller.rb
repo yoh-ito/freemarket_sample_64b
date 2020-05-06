@@ -41,10 +41,19 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update!(item_params)
-    redirect_to root_path(item.id), alert: '商品情報を変更しました'
-  
+    @item = Item.find(params[:id])
+    @images = @item.images
+    begin
+      @item.update!(item_params)
+    rescue
+      @item = Item.find(params[:id])
+      @images = @item.images
+      @item.update(except_image)
+    end
+    if @images.length >= 2
+      @images.first.destroy
+    end
+    redirect_to item_path, alert: '商品情報を変更しました'
   end
 
   def show
@@ -52,10 +61,12 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.includes(:images).find(params[:id])
-    @category_parent = ["---"]
-    @category_parent= Category.where(ancestry: nil).each do |parent|
-      @category_parent<<parent.name
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
     end
+    @category_child_array = @item.category.parent.parent.children
+    @category_grandchild_array = @item.category.parent.children
   end
 
   def destroy
@@ -113,7 +124,11 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image, :id]).merge(solder_id: current_user.id)
+    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand,:category_id,images_attributes: [:image, :id]).merge(solder_id: current_user.id)
+  end
+
+  def except_image
+    params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand,:category_id).merge(solder_id: current_user.id)
   end
 
   def set_item_information
