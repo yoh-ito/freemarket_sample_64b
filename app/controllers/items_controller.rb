@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   require "payjp"
   before_action :set_card, only:[:buy_confirmation, :payment, :buy_complete]
   before_action :set_pay_jp_api_key, only: [:payment]
+  before_action :set_category_pull
 
   def index
    @items = Item.includes(:images).order('created_at DESC').limit(3)
@@ -113,6 +114,10 @@ class ItemsController < ApplicationController
 
 
   private
+
+  def set_category_pull
+    @parents = Category.where(ancestry: nil).order("id ASC").limit(13)
+  end
   
   def item_params
     params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image, :id]).merge(solder_id: current_user.id)
