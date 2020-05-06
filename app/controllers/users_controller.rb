@@ -13,4 +13,8 @@ class UsersController < ApplicationController
     @items = user.items
     @user = current_user
   end
+
+  def logout
+
+  end
 end
